@@ -160,7 +160,7 @@ async def launch(pw, proxy_port: int | None = None, timezone: str = "America/Chi
         proxy=proxy_config,
         locale="en-US",
         timezone_id=timezone,
-        args=STEALTH_ARGS,
+        args=STEALTH_ARGS + ["--incognito"],
         chromium_sandbox=True,
         downloads_path=downloads_dir,
         accept_downloads=True,
