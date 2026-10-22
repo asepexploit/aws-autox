@@ -15,7 +15,10 @@ def _call(action: str, params: dict | None = None) -> dict:
         qp.update(params)
     url = f"{base}/api/ext/tempmail.php?{urllib.parse.urlencode(qp)}"
     req = urllib.request.Request(
-        url, headers={"X-Device-Secret": DEVICE_SECRET}
+        url, headers={
+            "X-Device-Secret": DEVICE_SECRET,
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        }
     )
     with urllib.request.urlopen(req, timeout=15) as resp:
         data = json.loads(resp.read())
