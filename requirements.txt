@@ -1,0 +1,3 @@
+# Pilih salah satu (patchright direkomendasikan untuk stealth)
+patchright
+# playwright  # fallback jika patchright tidak tersedia
